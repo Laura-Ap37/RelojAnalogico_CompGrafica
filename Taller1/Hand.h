@@ -7,6 +7,7 @@
 #include <functional>
 
 #include "Square.h"
+#include "Triangle.h"
 
 /**
  */
@@ -22,6 +23,8 @@ public:
 protected:
   float Length { 1 };
   std::function< float( ) > Function { []( ) -> int { return( 0 ); } };
+  Triangle* Decoration { nullptr };
+  float RPM { 0 };
 };
 
 #endif // __pujOpenGL__Hand__h__
