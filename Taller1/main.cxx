@@ -42,6 +42,7 @@ int main( int argc, char** argv )
   glutIdleFunc( cb_idle );
   glutReshapeFunc( cb_resize );
   glutKeyboardFunc( cb_keyboard );
+  glutKeyboardUpFunc( cb_keyboard_up );
   glutSpecialFunc( cb_special_keyboard );
 
   // Go!
