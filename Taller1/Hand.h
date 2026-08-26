@@ -19,6 +19,7 @@ public:
   virtual ~Hand( ) override;
 
   virtual void Draw( ) override;
+  void Rotate( float angle );
 
 protected:
   float Length { 1 };
