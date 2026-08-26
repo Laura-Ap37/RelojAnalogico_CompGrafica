@@ -9,10 +9,15 @@
 
 // -------------------------------------------------------------------------
 Hand::
-Hand( float length, std::function< float( ) > f )
+Hand( float length, std::function< float( ) > f, Object* decoration, float rpm, float decorationSize )
   : Square( ),
     Length( length / std::sqrt( float( 2 ) ) ),
-    Function( f )
+    Function( f ),
+    Decoration( decoration ),
+    RPM( rpm ),
+    RawLength( length ),
+    SpinAngle( 0 ),
+    DecorationSize( decorationSize )
 {
 }
 
@@ -28,11 +33,24 @@ Draw( )
 {
   float a = this->Function( );
 
-  glRotatef( a, 0, 0, 1 );
-  glScalef( this->Length * 0.08, this->Length, 1 );
-  glRotatef( 45, 0, 0, 1 );
-  glTranslatef( 0.5, 0.5, 0 );
-  this->Square::Draw( );
+  glPushMatrix( );
+    glRotatef( a, 0, 0, 1 );
+    glScalef( this->Length * 0.08, this->Length, 1 );
+    glRotatef( 45, 0, 0, 1 );
+    glTranslatef( 0.5, 0.5, 0 );
+    this->Square::Draw( );
+  glPopMatrix( );
+
+  if (this ->Decoration != nullptr)
+  {
+    glPushMatrix( );
+      glRotatef( a, 0, 0, 1 );              //mismo angulo de la manecilla
+      glTranslatef(0, this->RawLength, 0);  //sube hasta la punta de la manecilla
+      glRotatef(this->SpinAngle, 0, 0, 1); //gira la figura
+      glScalef(this->DecorationSize, this->DecorationSize, 1); //escala el triangulo
+      this->Decoration->Draw( );
+    glPopMatrix( );
+  }
 }
 
 // eof - Hand.cxx

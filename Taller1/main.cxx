@@ -11,6 +11,7 @@
 #include "Clock.h"
 #include "Hand.h"
 #include "World.h"
+#include "Triangle.h"
 
 int main( int argc, char** argv )
 {
@@ -21,7 +22,7 @@ int main( int argc, char** argv )
 
   Hand* seconds = new Hand( 19, get_second );
   Hand* minutes = new Hand( 15, get_minute );
-  Hand* hour = new Hand( 10, get_hour );
+  Hand* hour = new Hand( 10, get_hour, new Triangle( 1), 6, 1.5 );
   Body* body = new Body( 20, 100 );
 
   body->SetColor( 1, 0, 1 );
