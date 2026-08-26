@@ -9,7 +9,7 @@ class Triangle
   : public Circle
 {
 public:
-  Triangle(floar r, unsigned int s = 3 );
+  Triangle(float r, unsigned int s = 3 );
   virtual ~Triangle( ) override;
   virtual void Draw( ) override;
 
