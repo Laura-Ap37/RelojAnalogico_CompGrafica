@@ -43,6 +43,8 @@ Draw( )
 
   if (this ->Decoration != nullptr)
   {
+    this->SpinAngle += this->RPM * (this->RawLength / 10.0f);
+
     glPushMatrix( );
       glRotatef( a, 0, 0, 1 );              //mismo angulo de la manecilla
       glTranslatef(0, this->RawLength, 0);  //sube hasta la punta de la manecilla
@@ -51,6 +53,10 @@ Draw( )
       this->Decoration->Draw( );
     glPopMatrix( );
   }
+}
+//---------------------------------------------------------------------------------------------------
+void Hand :: Rotate( float angle ) {
+  this->SpinAngle += angle;
 }
 
 // eof - Hand.cxx
