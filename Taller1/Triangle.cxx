@@ -1,4 +1,5 @@
 #include "Triangle.h"
+#include <GL/gl.h> 
 
 // -------------------------------------------------------------------------
 Triangle::
@@ -18,8 +19,10 @@ Triangle::
 void Triangle::
 Draw( )
 {
-  glScalef( this->Radius, this->Radius, 1 );
-  this->Circle::Draw( );
+  glPushMatrix();
+    glScalef( this->Radius, this->Radius, 1 );
+    this->Circle::Draw( );
+  glPopMatrix();
 }
 
 // eof - Triangle
