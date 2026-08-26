@@ -12,6 +12,7 @@
 #include "Hand.h"
 #include "World.h"
 #include "Triangle.h"
+#include "Star.h"
 
 int main( int argc, char** argv )
 {
@@ -21,7 +22,7 @@ int main( int argc, char** argv )
   clockWorld.SetBounds( -30, 30, -30, 30 );
 
   Hand* seconds = new Hand( 19, get_second );
-  Hand* minutes = new Hand( 15, get_minute );
+  Hand* minutes = new Hand( 15, get_minute, new Star( 1.0f ), 0, 1.5);
   Hand* hour = new Hand( 10, get_hour, new Triangle( 1), 6, 1.5 );
   Body* body = new Body( 20, 100 );
 
