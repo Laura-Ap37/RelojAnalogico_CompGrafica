@@ -16,9 +16,11 @@ public:
   virtual ~Body( ) override;
 
   virtual void Draw( ) override;
+  void SetBackgroundColor( float r, float g, float b );
 
 protected:
   float Radius { 1 };
+  float BackgroundColor[ 3 ] { 1, 1, 1 };
 };
 
 #endif // __pujOpenGL__Body__h__

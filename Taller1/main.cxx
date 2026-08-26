@@ -26,11 +26,13 @@ int main( int argc, char** argv )
   Hand* minutes = new Hand( 15, get_minute, new Star( 1.0f ), 1, 1.5);
   Hand* hour = new Hand( 10, get_hour, new Triangle( 1), 1, 1.5 );
   Body* body = new Body( 20, 100 );
+  clockBody = body; 
 
   body->SetColor( 1, 0, 1 );
+  body->SetBackgroundColor( 0.25, 0.25, 0.25 );
   hour->SetColor( 0, 0, 1 );
-  minutes->SetColor( 0, 1, 0 );
-  seconds->SetColor( 1, 0, 0 );
+  minutes->SetColor( 0, 0, 1);
+  seconds->SetColor( 0, 0, 1 );
 
   body->AddChild( hour );
   body->AddChild( minutes );
