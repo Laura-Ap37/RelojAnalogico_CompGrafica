@@ -43,7 +43,7 @@ Draw( )
 
   if (this ->Decoration != nullptr)
   {
-    this->SpinAngle += this->RPM;
+    this->SpinAngle += this->RPM * (this->RawLength / 10.0f);
 
     glPushMatrix( );
       glRotatef( a, 0, 0, 1 );              //mismo angulo de la manecilla
