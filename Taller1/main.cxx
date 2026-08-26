@@ -22,9 +22,9 @@ int main( int argc, char** argv )
   // Init world
   clockWorld.SetBounds( -30, 30, -30, 30 );
 
-  Hand* seconds = new Hand( 19, get_second, new Hexagono( 1.0f ), 0, 1.5);
-  Hand* minutes = new Hand( 15, get_minute, new Star( 1.0f ), 0, 1.5);
-  Hand* hour = new Hand( 10, get_hour, new Triangle( 1), 6, 1.5 );
+  Hand* seconds = new Hand( 19, get_second, new Hexagono( 1.0f ), 1, 1.5);
+  Hand* minutes = new Hand( 15, get_minute, new Star( 1.0f ), 1, 1.5);
+  Hand* hour = new Hand( 10, get_hour, new Triangle( 1), 1, 1.5 );
   Body* body = new Body( 20, 100 );
 
   body->SetColor( 1, 0, 1 );
