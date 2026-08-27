@@ -40,6 +40,8 @@ void cb_keyboard( unsigned char k, int x, int y )
     clockBody->SetColor( 1, 0.6, 0);
 
     glutPostRedisplay( );
+  }
+
   if( k == '+' || k == '=' ) {
     Hand::ChangeDecorationSpeed( 2.0f );
   }
@@ -48,6 +50,7 @@ void cb_keyboard( unsigned char k, int x, int y )
     Hand::ChangeDecorationSpeed( -2.0f );
   }
 }
+
 
 // -------------------------------------------------------------------------
 void cb_keyboard_up( unsigned char k, int x, int y )
