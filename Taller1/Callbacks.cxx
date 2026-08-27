@@ -35,6 +35,11 @@ void cb_keyboard( unsigned char k, int x, int y )
     std::exit (1);
   }
 
+  if(k == 13 && clockBody != nullptr){
+    clockBody->SetBackgroundColor( 1.0, 0.65, 0.4 );
+    clockBody->SetColor( 1, 0.6, 0);
+
+    glutPostRedisplay( );
   if( k == '+' || k == '=' ) {
     Hand::ChangeDecorationSpeed( 2.0f );
   }
@@ -55,6 +60,7 @@ void cb_keyboard_up( unsigned char k, int x, int y )
 // -------------------------------------------------------------------------
 void cb_special_keyboard( int k, int x, int y )
 {
+  
 }
 
 // eof - Callbacks.cxx

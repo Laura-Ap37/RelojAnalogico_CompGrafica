@@ -6,9 +6,11 @@
 
 #include <string>
 #include "World.h"
+#include "Body.h"
 
 // -------------------------------------------------------------------------
 extern World clockWorld;
+extern Body* clockBody; 
 
 // -------------------------------------------------------------------------
 void init( int ac, char** av, const std::string& title, int W, int H );

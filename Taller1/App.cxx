@@ -9,6 +9,7 @@
 
 // -------------------------------------------------------------------------
 World clockWorld;
+Body* clockBody = nullptr; 
 
 // -------------------------------------------------------------------------
 void init( int ac, char** av, const std::string& title, int W, int H )
