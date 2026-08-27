@@ -20,6 +20,9 @@ public:
 
   virtual void Draw( ) override;
   void Rotate( float angle );
+  static void ChangeDecorationSpeed( float amount );
+  static void ResetDecorationSpeed( );
+  
 
 protected:
   float Length { 1 };
@@ -30,6 +33,7 @@ protected:
   float RawLength { 1 };
   float SpinAngle { 0 };
   float DecorationSize { 1 };
+  inline static float SpeedMultiplier { 1.0f };
 };
 
 #endif // __pujOpenGL__Hand__h__

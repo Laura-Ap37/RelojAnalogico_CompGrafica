@@ -4,7 +4,8 @@
 
 #include "Callbacks.h"
 #include "App.h"
-#include <iostream>
+#include "Hand.h"
+
 #include <GL/glut.h>
 
 // -------------------------------------------------------------------------
@@ -30,7 +31,7 @@ void cb_resize( int w, int h )
 // -------------------------------------------------------------------------
 void cb_keyboard( unsigned char k, int x, int y )
 {
-  if(k == 27){
+  if( k == 27 ){
     std::exit (1);
   }
 
@@ -39,6 +40,20 @@ void cb_keyboard( unsigned char k, int x, int y )
     clockBody->SetColor( 1, 0.6, 0);
 
     glutPostRedisplay( );
+  if( k == '+' || k == '=' ) {
+    Hand::ChangeDecorationSpeed( 2.0f );
+  }
+
+  if( k == '-' ) {
+    Hand::ChangeDecorationSpeed( -2.0f );
+  }
+}
+
+// -------------------------------------------------------------------------
+void cb_keyboard_up( unsigned char k, int x, int y )
+{
+  if( k == '+' || k == '=' || k == '-' ) {
+    Hand::ResetDecorationSpeed( );
   }
 }
 
